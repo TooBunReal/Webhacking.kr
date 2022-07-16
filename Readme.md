@@ -28,7 +28,8 @@ Xem xét một hồi thì Hàm này sẽ kiểm tra giá trị của ```user_lv`
 Nếu đúng thì sẽ cho chạy hàm solve(1).
 Nhiệm Vụ của chúng ta đơn giản là gửi một giá trị ```user_lv``` mới đúng với điều kiện của đoạn code:
 
-![image](https://user-images.githubusercontent.com/89735990/179356642-3a290016-1dc1-44a2-a86e-12dde9782b32.png)
+![image](https://user-images.githubusercontent.com/89735990/179356642-3a290016-1dc1-44a2-a86e-12dde9782b32.png)\
+
 Mình dùng Edit This Cookie để gán giá trị ```user_lv = 3.1``` và gửi lên server.
 Reload lại Web.
 
