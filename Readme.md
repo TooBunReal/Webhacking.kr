@@ -91,7 +91,7 @@ Giờ thì gửi giá trị ID và PW mới lên và reload lại web thôi
 
 ![image](https://user-images.githubusercontent.com/89735990/179358895-cef3ac17-262a-4505-a13d-cc3758696677.png)'
 
-# old-016
+# old-014
  Link Challenge: ```https://webhacking.kr/challenge/js-1/```
  
  ![image](https://user-images.githubusercontent.com/89735990/179385821-f212fa43-09fb-452a-8a4d-bcad8f5da9d7.png)
@@ -121,5 +121,24 @@ function ck(){
  
  ``https://webhacking.kr/challenge/web-06/?291600``
  
+ # old-015
+  Link Challenge: ``https://webhacking.kr/challenge/js-2/``
+  
+  ![image](https://user-images.githubusercontent.com/89735990/179386655-fefa1923-4e40-4ebe-8026-039a24df6875.png)
 
+  Oh no :< có vẻ nhưng trang web này không chào đoán chúng ta rồi.
+  Để thử ```window+shift+c``` đọc Source Code xem nào.
+  
+  ![image](https://user-images.githubusercontent.com/89735990/179386740-92206a2a-8754-4c0e-87ec-1ceacb1dde6d.png)
 
+  Hoàn toàn không có gì để xem luôn :< vậy thì làm sao bây giờ nhỉ.
+  
+  Qua tìm hiểu thì mình biết được lệnh ``Curl`` của linux. Nó sẽ kết xuất (render) cho bạn mã nguồn của trang chủ website. Nếu không xác định protocol thì Curl sẽ mặc định dịch nó thành HTTP.
+  Oke mình sẽ thử với Web này.
+  
+  ![image](https://user-images.githubusercontent.com/89735990/179386818-24bceab6-0b51-4aa5-aef9-30ca99c4cb5d.png)
+
+  Mình nhận về một được Source của Web rồi. Xem sơ thì mình thấy dòng ``"<a href=?getFlag>[Get Flag]</a>"``
+  Việc của mình bây giờ đơn giản là gửi ``?getFlag`` lên url để Hoàn Thành thôi hehe.
+  
+  ![image](https://user-images.githubusercontent.com/89735990/179386873-a4345606-5a9a-4f46-bdfe-a87ef0bc79fb.png)
