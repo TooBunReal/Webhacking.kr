@@ -15,7 +15,7 @@
  ![image](https://user-images.githubusercontent.com/89735990/179356233-3b36009f-9e2e-4b7a-8600-575543a0d518.png)
  
  Xem qua đoạn code PHP:
-  ```
+  ```php
   <?php
   if(!is_numeric($_COOKIE['user_lv'])) $_COOKIE['user_lv']=1;
   if($_COOKIE['user_lv']>=4) $_COOKIE['user_lv']=1;
@@ -89,7 +89,37 @@ Giờ thì gửi giá trị ID và PW mới lên và reload lại web thôi
 
 ![image](https://user-images.githubusercontent.com/89735990/179358833-50e5b309-fc78-4d15-995e-8fd12865af00.png)
 
-![image](https://user-images.githubusercontent.com/89735990/179358895-cef3ac17-262a-4505-a13d-cc3758696677.png)
+![image](https://user-images.githubusercontent.com/89735990/179358895-cef3ac17-262a-4505-a13d-cc3758696677.png)'
 
+# old-016
+ Link Challenge: ```https://webhacking.kr/challenge/js-1/```
+ 
+ ![image](https://user-images.githubusercontent.com/89735990/179385821-f212fa43-09fb-452a-8a4d-bcad8f5da9d7.png)
+
+ 
+ Source Code:
+ 
+ ```js
+ <form name=pw><input type=text name=input_pwd><input type=button value="check" onclick=ck()></form>
+<script>
+function ck(){
+  var ul=document.URL;
+  ul=ul.indexOf(".kr");
+  ul=ul*30;
+  if(ul==pw.input_pwd.value) { location.href="?"+ul*pw.input_pwd.value; }
+  else { alert("Wrong"); }
+}
+</script>
+```
+ Hàm ```indexOf(".kr")``` sẽ trả về giá trị của String tính từ đoạn ``kr`` và giá trị của nó trả về độ dài của đoạn ```kr/challenge/js-1/``` là 18. Vây biến ``ul`` lúc này có giá trị là ```18```.
+ 
+ Vậy ``ul*30=18*30=540`` 
+ 
+ ![image](https://user-images.githubusercontent.com/89735990/179386418-2893fea5-d190-46b2-87bb-722b6e792ffb.png)
+ 
+ Submit giá trị trên URL và hoàn thành.
+ 
+ ``https://webhacking.kr/challenge/web-06/?291600``
+ 
 
 
