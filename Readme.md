@@ -142,3 +142,38 @@ function ck(){
   Việc của mình bây giờ đơn giản là gửi ``?getFlag`` lên url để Hoàn Thành thôi hehe.
   
   ![image](https://user-images.githubusercontent.com/89735990/179386873-a4345606-5a9a-4f46-bdfe-a87ef0bc79fb.png)
+
+  # old-016
+  Link Challenge: ```https://webhacking.kr/challenge/js-3/```
+  
+  ![image](https://user-images.githubusercontent.com/89735990/179389269-86ff8d7e-56c8-4a88-8a29-879456fe9f4e.png)
+  Source Code:
+  
+   ```js
+   <script> 
+document.body.innerHTML+="<font color=yellow id=aa style=position:relative;left:0;top:0>*</font>";
+function mv(cd){
+  kk(star.style.left-50,star.style.top-50);
+  if(cd==100) star.style.left=parseInt(star.style.left+0,10)+50+"px";
+  if(cd==97) star.style.left=parseInt(star.style.left+0,10)-50+"px";
+  if(cd==119) star.style.top=parseInt(star.style.top+0,10)-50+"px";
+  if(cd==115) star.style.top=parseInt(star.style.top+0,10)+50+"px";
+  if(cd==124) location.href=String.fromCharCode(cd)+".php"; // do it!
+}
+function kk(x,y){
+  rndc=Math.floor(Math.random()*9000000);
+  document.body.innerHTML+="<font color=#"+rndc+" id=aa style=position:relative;left:"+x+";top:"+y+" onmouseover=this.innerHTML=''>*</font>";
+}
+</script>
+```
+Trên giao diện web xuất hiện 3 dấu sao có kích thước khác nhau và khi ta click vào thì dấu sao nhỏ nhất biến mất.
+Thử mò trên Source thì ta phát hiện một dòng kì lạ là dòng ```if(cd==124) location.href=String.fromCharCode(cd)+".php"; // do it!```
+Hmm nó kêu chúng ta thử với dòng này à, Vậy thì chúng ta phải coi xem ``124`` là ký tự nào đã.
+
+![image](https://user-images.githubusercontent.com/89735990/179389432-6aa32def-9579-43bc-b04e-e0a03ad29553.png)
+
+Sau khi tra thì mình biết được rằng ```124``` là ký tự ``|``, Nào giờ thì hãy đi tới đường dẫn ``|.php`` thôi.
+
+![image](https://user-images.githubusercontent.com/89735990/179389478-dd63477d-84b5-49b7-aff6-b2d2268a90d5.png)
+
+
