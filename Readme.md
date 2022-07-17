@@ -168,7 +168,9 @@ function kk(x,y){
 </script>
 ```
 Trên giao diện web xuất hiện 3 dấu sao có kích thước khác nhau và khi ta click vào thì dấu sao nhỏ nhất biến mất.
+
 Thử mò trên Source thì ta phát hiện một dòng kì lạ là dòng ```if(cd==124) location.href=String.fromCharCode(cd)+".php"; // do it!```
+
 Hmm nó kêu chúng ta thử với dòng này à, Vậy thì chúng ta phải coi xem ``124`` là ký tự nào đã.
 
 ![image](https://user-images.githubusercontent.com/89735990/179389432-6aa32def-9579-43bc-b04e-e0a03ad29553.png)
