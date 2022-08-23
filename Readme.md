@@ -126,7 +126,7 @@ function ck(){
   
   ![image](https://user-images.githubusercontent.com/89735990/179386655-fefa1923-4e40-4ebe-8026-039a24df6875.png)
 
-  Oh no :< có vẻ nhưng trang web này không chào đoán chúng ta rồi.
+  Oh no :< có vẻ nhưng trang web này không chào đón chúng ta rồi.
   Để thử ```window+shift+c``` đọc Source Code xem nào.
   
   ![image](https://user-images.githubusercontent.com/89735990/179386740-92206a2a-8754-4c0e-87ec-1ceacb1dde6d.png)
