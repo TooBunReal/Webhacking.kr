@@ -229,4 +229,32 @@ Sau khi tra thì mình biết được rằng ```124``` là ký tự ``|``, Nào
 
 ![image](https://user-images.githubusercontent.com/89735990/179389478-dd63477d-84b5-49b7-aff6-b2d2268a90d5.png)
 
+ # old-027
+  Link Challenge: ```https://webhacking.kr/challenge/web-12/```
+  
+  ![image](https://user-images.githubusercontent.com/89735990/209285393-274dd83a-1438-40d4-82bf-8cc02e4d3ee6.png)
+  
+  Source Code:
+  
+  ```php
+  <?php
+  if($_GET['no']){
+  $db = dbconnect();
+  if(preg_match("/#|select|\(| |limit|=|0x/i",$_GET['no'])) exit("no hack");
+  $r=mysqli_fetch_array(mysqli_query($db,"select id from chall27 where id='guest' and no=({$_GET['no']})")) or die("query error");
+  if($r['id']=="guest") echo("guest");
+  if($r['id']=="admin") solve(27); // admin's no = 2
+}
+?>  
+```
+- Đây là một chall về SQLi mà trang web sẽ kiểm tra giá trị ``no`` do người dùng nhập vào để phân biệt ``guest`` và ``admin`` .
+- Nhưng theo mặc định của trang web thì ``id`` của người dùng nhập vào luôn mặc định là ``guest`` .
+- Theo như src thì ta thấy được no của admin là ``no = 2`` .
+- Mắc dù vậy, nếu ta chỉ đơn thuần nhập ``no = 2`` vào thì cái giá trị ``id = 'guest'`` vẫn chưa bị thay đổi và chúng ta vẫn chưa hack được.
+- Ý tưởng của mình ở đây là truyền 2 giá trị ``no`` vào cùng một lúc đồng thời dùng ``--`` để bypass đoạn code die querry phía sau.
+- Dưới đây là payload ban đầu của mình : 
+
+    ```0) or no = 2 --```
+
+
 
