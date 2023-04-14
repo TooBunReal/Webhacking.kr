@@ -269,9 +269,30 @@ select id from chall27 where id='guest' and no = (0) or no = 2 -- )
 ```
 
 ![image](https://user-images.githubusercontent.com/89735990/209596460-cabccbba-132d-4445-934b-27478dcc1831.png)
+# old-32
+Link Challenge : ``https://webhacking.kr/challenge/code-5/``
+
+![image](https://user-images.githubusercontent.com/89735990/231943031-74057040-bb91-4a4b-ada9-34b98b26cd33.png)
+
+- Ở Chall này chúng ta gặp 1 bảng xếp hạng theo lươt vote.
+- Mỗi lần click vào tên User thì sẽ gửi lên server một giá trị get là ``?hit=LittleGoat``
+- Để solve được chúng ta cần vote 100 lần
+- Đây là code của mình:
+```py
+import requests
+my_cookie = dict(PHPSESSID='bỏ cái của bạn vào đây :>')
+
+for i in range(100):
+    r = requests.get(
+        'https://webhacking.kr/challenge/code-5/?hit=(thay thêm cái này nữa nka)', cookies=my_cookie)
+```
+
+![image](https://user-images.githubusercontent.com/89735990/231943884-0c22f938-6ed8-434a-801b-a17b1471a4bc.png)
+
 
 # old-54
 Link Challenge: ```https://webhacking.kr/challenge/web-12/```
+
   ![image](https://user-images.githubusercontent.com/89735990/231921577-ec569e94-1b01-4b3e-9dd4-2678df294840.png)
   
 Source Code:
