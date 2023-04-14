@@ -270,6 +270,90 @@ select id from chall27 where id='guest' and no = (0) or no = 2 -- )
 
 ![image](https://user-images.githubusercontent.com/89735990/209596460-cabccbba-132d-4445-934b-27478dcc1831.png)
 
+# old-54
+Link Challenge: ```https://webhacking.kr/challenge/web-12/```
+  ![image](https://user-images.githubusercontent.com/89735990/231921577-ec569e94-1b01-4b3e-9dd4-2678df294840.png)
+  
+Source Code:
+```js
+function run(){
+  if(window.ActiveXObject){
+   try {
+    return new ActiveXObject('Msxml2.XMLHTTP');
+   } catch (e) {
+    try {
+     return new ActiveXObject('Microsoft.XMLHTTP');
+    } catch (e) {
+     return null;
+    }
+   }
+  }else if(window.XMLHttpRequest){
+   return new XMLHttpRequest();
+ 
+  }else{
+   return null;
+  }
+ }
+x=run();
+function answer(i){
+  x.open('GET','?m='+i,false);
+  x.send(null);
+  aview.innerHTML=x.responseText;
+  i++;
+  if(x.responseText) setTimeout("answer("+i+")",20);
+  if(x.responseText=="") aview.innerHTML="?";
+}
+setTimeout("answer(0)",1000);
+```
+
+- Bài này chúng ta sẽ gặp một đối tượng đó là ``XMLHttpRequest`` , ở đây cụ thể là dùng đoạn code JS để gửi HTTP Request lên sever để trả về nội dụng theo thứ tự nhất định.
+- Hàm ``answer(i)`` được dùng để gửi HTTP Request thông qua biến ``?m=`` mỗi giá trị i và trả về giá nội dung thông qua ``responseText``.
+- Kiểm trả HTTP History thì mình nhận thấy Flag gồm 38 kí tự.
+
+  ![image](https://user-images.githubusercontent.com/89735990/231923515-f6180d38-9344-4ab0-84ae-388346655241.png)
+
+
+- Khổ nỗi ở mỗi lần response, chúng ta chỉ nhận được một kí tự :(( mình thì k đủ chăm chỉ để ghi lại từng kí tự nên mình đã nghĩ ra một cách để có thể lưu lại flag :>
+- Dưới đây là đoạn code JS mà mình gửi lên Server:
+ ```js
+function run(){
+  if(window.ActiveXObject){
+   try {
+    return new ActiveXObject('Msxml2.XMLHTTP');
+   } catch (e) {
+    try {
+     return new ActiveXObject('Microsoft.XMLHTTP');
+    } catch (e) {
+     return null;
+    }
+   }
+  }else if(window.XMLHttpRequest){
+   return new XMLHttpRequest();
+ 
+  }else{
+   return null;
+  }
+ }
+x=run();
+function answer(i){
+  x.open('GET','?m='+i,false);
+  x.send(null);
+  aview.innerHTML+=x.responseText;
+    a = aview.innerHTML;
+  i++;
+  if(x.responseText) setTimeout("answer("+i+")",20);
+  if(x.responseText=="") aview.innerHTML="?";
+  if(i==38) alert(a);
+}
+setTimeout("answer(0)",1000);
+```
+
+- Giải thích một chút thì ở đoạn code này mình đã đổi ``aview.innerHTML=x.responseText;`` thành ``aview.innerHTML+=x.responseText;`` và lưu giá trị và biến ``a`` xong kiểm tra nếu nó bằng 38 thì mình in ra Flag.
+
+![image](https://user-images.githubusercontent.com/89735990/231923710-d4215ec3-0f45-4db3-8753-f98b3ecfee3f.png)
+
+Flag : ``FLAG{a7981201c48d0ece288afd01ca43c55b}``
+
 
 
 
