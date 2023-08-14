@@ -1,6 +1,8 @@
 # Một Số Tool và Extension mà mình hay dùng để giải bài
   - Burp Suite
-  - JWT Cracker
+  - JWT_tool
+  - dirsearch
+  - lfimap
   - SQLMAP
   - Edit This Cookie
   - HTTP Request Maker
