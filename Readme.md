@@ -2,6 +2,9 @@
 
 | Folder Name      | Link |
 |-----------------|-------------|
-| [`dreamhack.io`](./dreamhack.io)  | Folder link |
-| [`Frida-Labs`](./Frida-Labs)    | Folder link |
-| [`Webhacking.kr`](./Webhacking.kr) | Folder link |
+| dreamhack.io  | [here](./dreamhack.io) |
+| Frida-Labs    | [here](./Frida-Labs) |
+| Webhacking.kr | [here](./Webhacking.kr) |
+
+
+
