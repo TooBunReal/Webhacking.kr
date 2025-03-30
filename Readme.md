@@ -5,6 +5,6 @@
 | Dreamhack.io  | [here](./dreamhack.io) |
 | Frida-Labs    | [here](./Frida-Labs) |
 | Webhacking.kr | [here](./Webhacking.kr) |
-| Rootme        | [here](./Rootme) |
+| Rootme        | [here](./rootme) |
 
 
